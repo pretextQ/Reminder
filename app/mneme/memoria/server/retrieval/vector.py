@@ -19,6 +19,7 @@ async def search_vector(
     scope: RetrievalScope,
     query: str,
     limit: int,
+    query_embedding: list[float] | None = None,
 ) -> list[DocumentSearchHit]:
     """Return the nearest active document chunks in the authorized scope.
 
@@ -30,7 +31,8 @@ async def search_vector(
     if limit <= 0:
         return []
 
-    query_embedding = (await embed_texts([query]))[0]
+    if query_embedding is None:
+        query_embedding = (await embed_texts([query]))[0]
     await db.execute(text("SET LOCAL hnsw.ef_search = 100"))
     await db.execute(text("SET LOCAL hnsw.iterative_scan = strict_order"))
     distance = DocumentChunk.embedding.cosine_distance(query_embedding)
