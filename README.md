@@ -13,7 +13,6 @@ Mneme 的记忆 Agent 本体：让笔记、文档与经历成为可检索、可�
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Vue](https://img.shields.io/badge/Vue-3.5-42B883?logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![License](https://img.shields.io/github/license/pretextQ/Reminder)](LICENSE)
 
 [产品能力](#产品能力) · [系统架构](#系统架构) · [快速开始](#快速开始) · [配置](#配置) · [部署与运维](#部署与运维) · [文档](#文档)
 
@@ -439,7 +438,3 @@ CI 会分别执行前端、后端和集成检查；只有三个阶段全部通�
 - 不以进程内快捷路径替代耐久队列、Outbox 或审批；
 - 不在日志、指标或错误响应中暴露内容与凭据；
 - 所有派生状态必须保持可重建。
-
-## License
-
-本项目基于 [MIT License](LICENSE) 开源。
