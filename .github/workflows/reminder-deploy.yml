@@ -153,6 +153,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Docker and GHCR image paths must be lowercase; owner logins may contain uppercase characters.
+      - name: Resolve lowercase image namespace
+        shell: bash
+        run: echo "IMAGE_NAMESPACE=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+
       - name: Validate release tag
         shell: bash
         run: |
@@ -178,5 +183,5 @@ jobs:
           file: docker/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/reminder:${{ github.ref_name }}
-            ghcr.io/${{ github.repository_owner }}/reminder:sha-${{ github.sha }}
+            ghcr.io/${{ env.IMAGE_NAMESPACE }}/reminder:${{ github.ref_name }}
+            ghcr.io/${{ env.IMAGE_NAMESPACE }}/reminder:sha-${{ github.sha }}

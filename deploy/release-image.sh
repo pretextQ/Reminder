@@ -3,7 +3,7 @@
 set -euo pipefail
 
 IMAGE_TAG="${IMAGE_TAG:?set IMAGE_TAG to a version such as v1.2.3}"
-IMAGE_REPOSITORY="${IMAGE_REPOSITORY:-ghcr.io/juemimgcd/reminder}"
+IMAGE_REPOSITORY="${IMAGE_REPOSITORY:-ghcr.io/pretextq/reminder}"
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ENV_FILE="$APP_DIR/.env"
 TIMEOUT_SECONDS="${DEPLOY_TIMEOUT_SECONDS:-300}"

@@ -134,15 +134,16 @@ def test_release_workflow_publishes_versioned_ghcr_images_from_validated_tags_on
     assert "^v[0-9]+\\.[0-9]+\\.[0-9]+$" in workflow
     assert "docker/login-action@v3" in workflow
     assert "docker/build-push-action@v6" in workflow
-    assert "ghcr.io/${{ github.repository_owner }}/reminder:${{ github.ref_name }}" in workflow
-    assert "ghcr.io/${{ github.repository_owner }}/reminder:sha-${{ github.sha }}" in workflow
+    assert "IMAGE_NAMESPACE=${GITHUB_REPOSITORY_OWNER,,}" in workflow
+    assert "ghcr.io/${{ env.IMAGE_NAMESPACE }}/reminder:${{ github.ref_name }}" in workflow
+    assert "ghcr.io/${{ env.IMAGE_NAMESPACE }}/reminder:sha-${{ github.sha }}" in workflow
 
 
 def test_production_template_and_docs_explain_versioned_ghcr_image_deployment():
     template = PRODUCTION_ENV_TEMPLATE.read_text(encoding="utf-8")
     docs = DEPLOY_DOCUMENTATION.read_text(encoding="utf-8")
 
-    assert "APP_IMAGE_REPOSITORY=ghcr.io/juemimgcd/reminder" in template
+    assert "APP_IMAGE_REPOSITORY=ghcr.io/pretextq/reminder" in template
     assert "APP_IMAGE_TAG=" in template
     assert "APP_IMAGE_PULL_POLICY=always" in template
     assert "docker login ghcr.io" in docs
