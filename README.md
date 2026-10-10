@@ -429,12 +429,3 @@ CI 会分别执行前端、后端和集成检查；只有三个阶段全部通�
 | [Deployment](deploy/DEPLOY.md) | 生产部署、发布、回滚及 Reminder 运维 |
 
 规范路径：[docs/architecture.md](docs/architecture.md)、[docs/runtime-contracts.md](docs/runtime-contracts.md)、[docs/current-state.md](docs/current-state.md)。
-
-## 参与贡献
-
-欢迎通过 [Issues](https://github.com/pretextQ/Reminder/issues) 报告问题或提出建议。提交 Pull Request 前，请运行与改动范围对应的质量检查，并保持以下边界：
-
-- 不跨越 Mneme 与 Reminder 的数据库所有权；
-- 不以进程内快捷路径替代耐久队列、Outbox 或审批；
-- 不在日志、指标或错误响应中暴露内容与凭据；
-- 所有派生状态必须保持可重建。
