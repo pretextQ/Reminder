@@ -8,12 +8,12 @@
 
 Mneme 的记忆 Agent 本体：让笔记、文档与经历成为可检索、可追踪、可持续演化的个人记忆。
 
-[![CI & Release](https://github.com/juemimgcd/Reminder/actions/workflows/reminder-deploy.yml/badge.svg?branch=master)](https://github.com/juemimgcd/Reminder/actions/workflows/reminder-deploy.yml)
+[![CI & Release](https://github.com/pretextQ/Reminder/actions/workflows/reminder-deploy.yml/badge.svg?branch=master)](https://github.com/pretextQ/Reminder/actions/workflows/reminder-deploy.yml)
 [![Version](https://img.shields.io/badge/version-0.1.0-6C63FF)](VERSION)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Vue](https://img.shields.io/badge/Vue-3.5-42B883?logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![License](https://img.shields.io/github/license/juemimgcd/Reminder)](LICENSE)
+[![License](https://img.shields.io/github/license/pretextQ/Reminder)](LICENSE)
 
 [产品能力](#产品能力) · [系统架构](#系统架构) · [快速开始](#快速开始) · [配置](#配置) · [部署与运维](#部署与运维) · [文档](#文档)
 
@@ -111,7 +111,7 @@ flowchart LR
 ### 1. 获取项目
 
 ```bash
-git clone https://github.com/juemimgcd/Reminder.git Mneme
+git clone https://github.com/pretextQ/Reminder.git Mneme
 cd Mneme
 ```
 
@@ -433,7 +433,7 @@ CI 会分别执行前端、后端和集成检查；只有三个阶段全部通�
 
 ## 参与贡献
 
-欢迎通过 [Issues](https://github.com/juemimgcd/Reminder/issues) 报告问题或提出建议。提交 Pull Request 前，请运行与改动范围对应的质量检查，并保持以下边界：
+欢迎通过 [Issues](https://github.com/pretextQ/Reminder/issues) 报告问题或提出建议。提交 Pull Request 前，请运行与改动范围对应的质量检查，并保持以下边界：
 
 - 不跨越 Mneme 与 Reminder 的数据库所有权；
 - 不以进程内快捷路径替代耐久队列、Outbox 或审批；
